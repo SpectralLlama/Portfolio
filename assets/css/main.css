@@ -2944,9 +2944,24 @@
 
 /* Banner */
 
+.banner0 {
+	background-image: url(../../images/banner.jpg);
+}
+
+.banner1 {
+	background-image: url(../../images/banner1.jpg);
+}
+
+.banner2 {
+	background-image: url(../../images/banner2.jpg);
+}
+
+.banner3 {
+	background-image: url(../../images/banner3.jpg);
+}
+
 	#banner {
 		padding: 14em 0 12em 0;
-		background-image: url(../../images/banner.jpg);
 		background-size: cover;
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -3036,7 +3051,7 @@
 
 /* Banner alt1 */
 
-	#banner1 {
+	/* #banner1 {
 		padding: 14em 0 12em 0;
 		background-image: url(../../images/banner1.jpg);
 		background-size: cover;
@@ -3124,7 +3139,7 @@
 			-webkit-transform: translateY(1em);
 			-ms-transform: translateY(1em);
 			transform: translateY(1em);
-		}
+		} */
 
 /* Main */
 
