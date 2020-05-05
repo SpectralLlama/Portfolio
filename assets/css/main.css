@@ -2659,25 +2659,36 @@
 				color: #fff;
 			}
 
-		@media screen and (min-width: 981px) and (max-width: 1280px) {
-			.txt {
+		@media screen and (min-width: 981px){
+			.txt2 {
 				padding: 3em 12em 1em 12em;
 			}
-		}	
+			.txt {
+				padding: 3em 6em 1em 6em;
+			}
 
+		}	
+/* 
 		@media screen and (min-width: 1281px) {
 			.txt {
 				padding: 3em 12em 1em 12em;
 			}
-		}	
+			.txt2 {
+				padding: 3em 6em 1em 6em;
+			}
+		}	 */
 
 		@media screen (min-width: 481px) and (max-width: 980px) {
 
 			.txt {
 				padding: 3em 10em 1em 10em;
 			}
+			.txt2 {
+				padding: 3em 5em 1em 5em;
+			}
 
 		}
+		
 
 	}
 
@@ -3049,97 +3060,6 @@
 			transform: translateY(1em);
 		}
 
-/* Banner alt1 */
-
-	/* #banner1 {
-		padding: 14em 0 12em 0;
-		background-image: url(../../images/banner1.jpg);
-		background-size: cover;
-		background-position: center top;
-		background-repeat: no-repeat;
-		text-align: center;
-	}
-
-		#banner1 .content {
-			-moz-transition: opacity 1s ease-in-out, -moz-transform 0.75s ease-in-out;
-			-webkit-transition: opacity 1s ease-in-out, -webkit-transform 0.75s ease-in-out;
-			-ms-transition: opacity 1s ease-in-out, -ms-transform 0.75s ease-in-out;
-			transition: opacity 1s ease-in-out, transform 0.75s ease-in-out;
-			opacity: 1;
-		}
-
-		#banner1 h1 {
-			font-size: 3em;
-			color: #015249;
-			line-height: 1em;
-			margin: 0 0 0.5em 0;
-			padding: 0;
-		}
-
-		#banner1 p {
-			font-size: 1.25em;
-			margin-bottom: 1.75em;
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			#banner1 {
-				padding: 12em 0 10em 0;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			#banner1 {
-				padding: 8em 6em 6em 6em;
-			}
-
-				#banner1 br {
-					display: none;
-				}
-
-				#banner1 h1 {
-					font-size: 2.25em;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#banner1 {
-				padding: 6em 4em 4em 4em;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			#banner1 {
-				padding: 4em 2em 2em 2em;
-			}
-
-				#banner1 h1 {
-					font-size: 2em;
-				}
-
-				#banner1 p {
-					font-size: 1em;
-				}
-
-				#banner1 .button {
-					font-size: .9em;
-				}
-
-		}
-
-		body.is-loading #banner1 .content {
-			opacity: 0;
-			-moz-transform: translateY(1em);
-			-webkit-transform: translateY(1em);
-			-ms-transform: translateY(1em);
-			transform: translateY(1em);
-		} */
 
 /* Main */
 
