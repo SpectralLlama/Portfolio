@@ -1816,7 +1816,6 @@
 	}
 
 	header p {
-		color: #bbb;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2133,6 +2132,7 @@
 
 			.image.fit img {
 				width: 100%;
+				margin: auto;
 			}
 
 		.image.round img {
@@ -2272,7 +2272,7 @@
 						padding: 0 0 0 0.5em;
 					}
 
-			@media screen and (max-width: 480px) {
+			@media screen and (max-width: 570px) {
 
 				ul.actions {
 					margin: 0 0 2em 0;
@@ -2282,7 +2282,8 @@
 						padding: 1em 0 0 0;
 						display: block;
 						text-align: center;
-						width: 100%;
+						/* width: 100%; */
+						
 					}
 
 						ul.actions li:first-child {
@@ -2290,7 +2291,7 @@
 						}
 
 						ul.actions li > * {
-							width: 100%;
+							/* width: 100%; */
 							margin: 0 !important;
 						}
 
@@ -2561,7 +2562,7 @@
 			input[type="button"],
 			button,
 			.button {
-				padding: 0;
+				/* padding: 0; */
 			}
 
 		}
