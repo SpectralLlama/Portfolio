@@ -1622,7 +1622,7 @@
 	}
 
 	figcaption {
-		color:#77c9d4;
+		color:#2e2e2e;
 		font-weight: bold;
 		font-style: italic;
 	}
@@ -2406,7 +2406,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #57bc90;
+		background-color: #142da0;
 		border-radius: 4px;
 		border: 0;
 		color: #ffffff;
@@ -2630,7 +2630,7 @@
 		}
 
 		#selected {
-			color: #77c9d4;
+			color: #2e2e2e;
 		}
 
 /* Wrapper */
@@ -2644,11 +2644,11 @@
 		}
 
 		.wrapper h3 {
-			color: #77c9d4;
+			color: #2e2e2e;
 		}
 
 		.wrapper.style1 {
-			background: #77c9d4;
+			background: #2e2e2e;
 			color: #ffffff;
 		}
 
