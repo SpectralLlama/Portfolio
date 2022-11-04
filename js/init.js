@@ -242,7 +242,6 @@ function ryker_tm_modalbox_news(){
 function ryker_tm_modalbox_portfolio(){
 	"use strict";
 	
-	var portfolioModalOpened = false;
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var button		= jQuery('.ryker_tm_portfolio .popup_info');
 	
@@ -257,17 +256,14 @@ function ryker_tm_modalbox_portfolio(){
 		modalBox.find('.description_wrap').html(details);
 		modalBox.find('.top_image').html(image);
 		modalBox.find('.portfolio_main_title').html(titles);
-		portfolioModalOpened = true;
-		
 		return false;
 	});
 
 	document.addEventListener("keyup", function(evt) {
-		if (evt.code == "Escape" && portfolioModalOpened && modalBox) {
+		if (evt.code == "Escape" && modalBox && modalBox.hasClass("opened")) {
 			evt.preventDefault();
 			modalBox.removeClass("opened");
 			modalBox.find('.description_wrap').html('');
-			portfolioModalOpened = false;
 		}
 	});
 }
