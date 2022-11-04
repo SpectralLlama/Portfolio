@@ -3,15 +3,10 @@ jQuery(document).ready(function(){
 	"use strict";
 	
 	// here all ready functions
-	
-	ryker_tm_color_switcher();
-	ryker_tm_switcher_opener();
-	ryker_tm_cursor_switcher();
 	ryker_tm_nav_bg();
 	ryker_tm_trigger_menu();
 	ryker_tm_modalbox_news();
 	ryker_tm_modalbox_portfolio();
-	ryker_tm_cursor();
 	ryker_tm_imgtosvg();
 	ryker_tm_popup();
 	ryker_tm_data_images();
@@ -19,7 +14,6 @@ jQuery(document).ready(function(){
 	myIsotope();
 	ryker_tm_jarallax();
 	ryker_tm_owl_carousel();
-	
 	
 	jQuery(window).load('body', function(){
 		ryker_tm_my_load();
@@ -33,96 +27,6 @@ jQuery(document).ready(function(){
 // ------------------------------------------------
 // ---------------   FUNCTIONS    -----------------
 // ------------------------------------------------
-
-// -----------------------------------------------------
-// ---------------------   SWITCHERS    ----------------
-// -----------------------------------------------------
-
-function ryker_tm_color_switcher(){
-
-	"use strict";
-
-	var list	= jQuery('.ryker_tm_settings .colors li a');
-
-	list.on('click',function(){
-		var element = jQuery(this);
-		var elval	= element.attr('class');
-		element.closest('.ryker_tm_all_wrap').attr('data-color',''+elval+'');
-		return false;
-	});	
-}
-
-function ryker_tm_switcher_opener(){
-
-	"use strict";
-
-	var settings	= jQuery('.ryker_tm_settings');
-	var button		= settings.find('.link');
-	var direction	= settings.find('.direction li a');
-	var light		= settings.find('.direction li a.light');
-	var dark		= settings.find('.direction li a.dark');
-
-	button.on('click',function(){
-		var element = jQuery(this);
-		if(element.hasClass('opened')){
-			element.removeClass('opened');
-			element.closest('.ryker_tm_settings').removeClass('opened');
-		}else{
-			element.addClass('opened');
-			element.closest('.ryker_tm_settings').addClass('opened');
-		}
-		return false;
-	});
-
-	direction.on('click',function(){
-		var element = jQuery(this);
-		if(!element.hasClass('active')){
-			direction.removeClass('active');
-			element.addClass('active');
-		}
-	});
-
-	dark.on('click',function(){
-		var el = jQuery(this);
-		jQuery('body').addClass('dark');
-		jQuery('.ryker_tm_partners').addClass('opened');
-		el.closest('.ryker_tm_settings').addClass('changed');
-		return false;
-	});
-
-	light.on('click',function(){
-		var ele = jQuery(this);
-		jQuery('body').removeClass('dark');
-		jQuery('.ryker_tm_partners').removeClass('opened');
-		ele.closest('.ryker_tm_settings').removeClass('changed');
-		return false;
-	});
-}
-
-function ryker_tm_cursor_switcher(){
-
-	"use strict";
-
-	var wrapper		= jQuery('.ryker_tm_all_wrap');
-	var button		= jQuery('.ryker_tm_settings .cursor li a');
-	var show		= jQuery('.ryker_tm_settings .cursor li a.show');
-	var hide		= jQuery('.ryker_tm_settings .cursor li a.hide');
-
-	button.on('click',function(){
-		var element = jQuery(this);
-		if(!element.hasClass('showme')){
-			button.removeClass('showme');
-			element.addClass('showme');
-		}
-		return false;
-	});
-	show.on('click',function(){
-		wrapper.attr('data-magic-cursor','');
-	});
-	hide.on('click',function(){
-		wrapper.attr('data-magic-cursor','hide');
-	});
-}
 
 // ------------------------------------------------
 // -------------------  ANCHOR --------------------
@@ -182,12 +86,9 @@ function ryker_tm_nav_bg(){
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function ryker_tm_trigger_menu(){
-	
+function ryker_tm_trigger_menu(){	
 	"use strict";
 
-	var audio1			= jQuery('#audio1');
-	var audio2			= jQuery('#audio2');
 	var hamburger 		= jQuery('.trigger .hamburger');
 	var list			= jQuery('.ryker_tm_topbar .list ul li');
 	var mobileMenu		= jQuery('.ryker_tm_mobile_menu .dropdown');
@@ -198,12 +99,10 @@ function ryker_tm_trigger_menu(){
 
 		if(element.hasClass('is-active')){
 			element.removeClass('is-active');
-			audio1[0].play();
 			list.removeClass('opened');
 			mobileMenu.slideUp();
 		}else{
 			element.addClass('is-active');
-			audio2[0].play();
 			list.each(function(i){
 				var ele = jQuery(this);
 				setTimeout(function(){ele.addClass('opened');},i*50);
@@ -228,9 +127,17 @@ function ryker_tm_modalbox_news(){
 	
 	"use strict";
 	
+	var htmlEl 		= jQuery('html');
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var list 		= jQuery('.ryker_tm_news ul li');
-	var closePopup	= modalBox.find('.close button');
+	var closeButton	= modalBox.find('.close button');
+
+	var closePopup = function() {
+		htmlEl.removeClass('modal-open');
+		modalBox.removeClass('opened');
+		modalBox.find('.description_wrap').html('');
+		return false;
+	}
 	
 	list.each(function(){
 		var element 	= jQuery(this);
@@ -240,7 +147,9 @@ function ryker_tm_modalbox_news(){
 		var imgData		= mainImage.data('img-url');
 		var title		= element.find('.title');
 		var titleHref	= element.find('.title a').html();
+
 		buttons.on('click',function(){
+			htmlEl.addClass('modal-open');
 			modalBox.addClass('opened');
 			modalBox.find('.description_wrap').html(details);
 			mainImage = modalBox.find('.main');
@@ -251,11 +160,15 @@ function ryker_tm_modalbox_news(){
 			return false;
 		});
 	});
-	closePopup.on('click',function(){
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		return false;
+
+	modalBox.on('click', function(evt){
+		if ($(evt.target).is(modalBox)) {
+			evt.preventDefault();
+			closePopup();
+		}
 	});
+
+	closeButton.on('click', closePopup);
 }
 
 // -------------------------------------------------
@@ -263,9 +176,9 @@ function ryker_tm_modalbox_news(){
 // -------------------------------------------------
 
 function ryker_tm_modalbox_portfolio(){
-	
 	"use strict";
 	
+	var htmlEl 		= jQuery('html');
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var button		= jQuery('.ryker_tm_portfolio .popup_info');
 	
@@ -276,12 +189,31 @@ function ryker_tm_modalbox_portfolio(){
 		var titles 		= parent.find('.details').html();
 		var image 		= parent.find('.image').html();
 		
+		htmlEl.addClass('modal-open');
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
-		modalBox.find('.top_image').html(image);
 		modalBox.find('.portfolio_main_title').html(titles);
-		
+		modalBox.find('.top_image').html(image);
+
+		var modalImage = modalBox.find('.top_image div[data-img-large-url]');
+		if (modalImage) {
+			var largeUrl = modalImage.data('img-large-url');
+
+			if (largeUrl) {
+				modalImage.css({backgroundImage: 'url(' + largeUrl + ')'});
+			}
+		}
+
 		return false;
+	});
+
+	document.addEventListener("keyup", function(evt) {
+		if (evt.code == "Escape" && modalBox && modalBox.hasClass("opened")) {
+			evt.preventDefault();
+			htmlEl.removeClass('modal-open');
+			modalBox.removeClass("opened");
+			modalBox.find('.description_wrap').html('');
+		}
 	});
 }
 
@@ -320,32 +252,6 @@ function ryker_tm_my_load(){
 	var speed	= 500;
 	setTimeout(function(){ryker_tm_preloader();},speed);
 }
-
-// -----------------------------------------------------
-// ------------------   CURSOR    ----------------------
-// -----------------------------------------------------
-
-function ryker_tm_cursor(){
-    "use strict";
-	
-	var myCursor	= jQuery('.mouse-cursor');
-	
-	if(myCursor.length){
-		if ($("body")) {
-        const e = document.querySelector(".cursor-inner"),
-            t = document.querySelector(".cursor-outer");
-        let n, i = 0,
-            o = !1;
-        window.onmousemove = function (s) {
-            o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)", n = s.clientY, i = s.clientX
-        }, $("body").on("mouseenter", "a, .ryker_tm_topbar .trigger, .cursor-pointer", function () {
-            e.classList.add("cursor-hover"), t.classList.add("cursor-hover")
-        }), $("body").on("mouseleave", "a, .ryker_tm_topbar .trigger, .cursor-pointer", function () {
-            $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
-        }), e.style.visibility = "visible", t.style.visibility = "visible"
-    }
-	}
-};
 
 // -----------------------------------------------------
 // ---------------    IMAGE TO SVG    ------------------
@@ -518,17 +424,19 @@ function ryker_tm_jarallax(){
 	});
 }
 
-
-$("#grouploop").grouploop({
-  velocity: 1,
-  forward: false,
-  childNode: ".item",
-  childWrapper: ".item-wrap",
-  pauseOnHover: false,
-  complete: function() {
-    console.log("init");
-  }
-});
+var grouploop = $("#grouploop");
+if (grouploop.length > 0) {
+	grouploop.grouploop({
+	velocity: 1,
+	forward: false,
+	childNode: ".item",
+	childWrapper: ".item-wrap",
+	pauseOnHover: false,
+	complete: function() {
+		console.log("init");
+	}
+	});
+}
 
 
 // -----------------------------------------------------
