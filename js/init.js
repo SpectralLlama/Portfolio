@@ -127,11 +127,13 @@ function ryker_tm_modalbox_news(){
 	
 	"use strict";
 	
+	var htmlEl 		= jQuery('html');
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var list 		= jQuery('.ryker_tm_news ul li');
 	var closeButton	= modalBox.find('.close button');
 
 	var closePopup = function() {
+		htmlEl.removeClass('modal-open');
 		modalBox.removeClass('opened');
 		modalBox.find('.description_wrap').html('');
 		return false;
@@ -145,7 +147,9 @@ function ryker_tm_modalbox_news(){
 		var imgData		= mainImage.data('img-url');
 		var title		= element.find('.title');
 		var titleHref	= element.find('.title a').html();
+
 		buttons.on('click',function(){
+			htmlEl.addClass('modal-open');
 			modalBox.addClass('opened');
 			modalBox.find('.description_wrap').html(details);
 			mainImage = modalBox.find('.main');
@@ -174,6 +178,7 @@ function ryker_tm_modalbox_news(){
 function ryker_tm_modalbox_portfolio(){
 	"use strict";
 	
+	var htmlEl 		= jQuery('html');
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var button		= jQuery('.ryker_tm_portfolio .popup_info');
 	
@@ -184,6 +189,7 @@ function ryker_tm_modalbox_portfolio(){
 		var titles 		= parent.find('.details').html();
 		var image 		= parent.find('.image').html();
 		
+		htmlEl.addClass('modal-open');
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
 		modalBox.find('.portfolio_main_title').html(titles);
@@ -204,6 +210,7 @@ function ryker_tm_modalbox_portfolio(){
 	document.addEventListener("keyup", function(evt) {
 		if (evt.code == "Escape" && modalBox && modalBox.hasClass("opened")) {
 			evt.preventDefault();
+			htmlEl.removeClass('modal-open');
 			modalBox.removeClass("opened");
 			modalBox.find('.description_wrap').html('');
 		}
