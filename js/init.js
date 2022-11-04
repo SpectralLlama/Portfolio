@@ -254,8 +254,18 @@ function ryker_tm_modalbox_portfolio(){
 		
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
-		modalBox.find('.top_image').html(image);
 		modalBox.find('.portfolio_main_title').html(titles);
+		modalBox.find('.top_image').html(image);
+
+		var modalImage = modalBox.find('.top_image div[data-img-large-url]');
+		if (modalImage) {
+			var largeUrl = modalImage.data('img-large-url');
+
+			if (largeUrl) {
+				modalImage.css({backgroundImage: 'url(' + largeUrl + ')'});
+			}
+		}
+
 		return false;
 	});
 
