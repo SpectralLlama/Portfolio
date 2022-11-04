@@ -443,22 +443,8 @@ h6 { font-size: 16px; }
 	overflow: hidden;
 	margin-bottom: 30px;
 }
-.ryker_tm_hero video{
-	 position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
-  	-o-object-fit: cover;
-    object-fit: cover;
-  	-o-object-position: center;
-    object-position: center;
-}
-.ryker_tm_hero .job h3{
-	background-color: #f9f9f9;
-	mix-blend-mode: screen;
-	position: relative;
-	z-index: 5;
+.ryker_tm_hero .job h3 {
+	color: #66B95C;
 	font-size: 72px;
 	font-weight: 900;
 	line-height: 1.3;
@@ -2070,56 +2056,6 @@ h6 { font-size: 16px; }
 	color: #fff;
 	display: block;
 }
-
-/*---------------------------------------------------*/
-/*	13) RYKER MAGIC CURSOR
-/*---------------------------------------------------*/
-
-/* .ryker_tm_all_wrap[data-magic-cursor="hide"] .mouse-cursor{
-	display: none;
-}
-.mouse-cursor{
-  position: fixed;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  visibility: hidden;
-}
-.cursor-inner {
-  margin-left: -3px;
-  margin-top: -3px;
-  width: 6px;
-  height: 6px;
-  z-index: 50;
-  background-color: #d1701f;
-  -webkit-transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
-  transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
-}
-.cursor-inner.cursor-hover {
-  margin-left: -40px;
-  margin-top: -40px;
-  width: 80px;
-  height: 80px;
-  background-color: #d1701f;
-  opacity: .3;
-}
-.cursor-outer {
-  margin-left: -15px;
-  margin-top: -15px;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #d1701f;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  z-index: 50;
-  opacity: .5;
-  -webkit-transition: all .08s ease-out;
-  transition: all .08s ease-out;
-}
-.cursor-outer.cursor-hover{opacity: 0;} */
 
 /*---------------------------------------------------*/
 /*  ARLO SETTINGS

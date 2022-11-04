@@ -6,12 +6,10 @@ jQuery(document).ready(function(){
 	
 	ryker_tm_color_switcher();
 	ryker_tm_switcher_opener();
-	ryker_tm_cursor_switcher();
 	ryker_tm_nav_bg();
 	ryker_tm_trigger_menu();
 	ryker_tm_modalbox_news();
 	ryker_tm_modalbox_portfolio();
-	ryker_tm_cursor();
 	ryker_tm_imgtosvg();
 	ryker_tm_popup();
 	ryker_tm_data_images();
@@ -19,7 +17,6 @@ jQuery(document).ready(function(){
 	myIsotope();
 	ryker_tm_jarallax();
 	ryker_tm_owl_carousel();
-	
 	
 	jQuery(window).load('body', function(){
 		ryker_tm_my_load();
@@ -99,31 +96,6 @@ function ryker_tm_switcher_opener(){
 	});
 }
 
-function ryker_tm_cursor_switcher(){
-
-	"use strict";
-
-	var wrapper		= jQuery('.ryker_tm_all_wrap');
-	var button		= jQuery('.ryker_tm_settings .cursor li a');
-	var show		= jQuery('.ryker_tm_settings .cursor li a.show');
-	var hide		= jQuery('.ryker_tm_settings .cursor li a.hide');
-
-	button.on('click',function(){
-		var element = jQuery(this);
-		if(!element.hasClass('showme')){
-			button.removeClass('showme');
-			element.addClass('showme');
-		}
-		return false;
-	});
-	show.on('click',function(){
-		wrapper.attr('data-magic-cursor','');
-	});
-	hide.on('click',function(){
-		wrapper.attr('data-magic-cursor','hide');
-	});
-}
-
 // ------------------------------------------------
 // -------------------  ANCHOR --------------------
 // ------------------------------------------------
@@ -182,12 +154,9 @@ function ryker_tm_nav_bg(){
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function ryker_tm_trigger_menu(){
-	
+function ryker_tm_trigger_menu(){	
 	"use strict";
 
-	var audio1			= jQuery('#audio1');
-	var audio2			= jQuery('#audio2');
 	var hamburger 		= jQuery('.trigger .hamburger');
 	var list			= jQuery('.ryker_tm_topbar .list ul li');
 	var mobileMenu		= jQuery('.ryker_tm_mobile_menu .dropdown');
@@ -198,12 +167,10 @@ function ryker_tm_trigger_menu(){
 
 		if(element.hasClass('is-active')){
 			element.removeClass('is-active');
-			audio1[0].play();
 			list.removeClass('opened');
 			mobileMenu.slideUp();
 		}else{
 			element.addClass('is-active');
-			audio2[0].play();
 			list.each(function(i){
 				var ele = jQuery(this);
 				setTimeout(function(){ele.addClass('opened');},i*50);
@@ -320,32 +287,6 @@ function ryker_tm_my_load(){
 	var speed	= 500;
 	setTimeout(function(){ryker_tm_preloader();},speed);
 }
-
-// -----------------------------------------------------
-// ------------------   CURSOR    ----------------------
-// -----------------------------------------------------
-
-function ryker_tm_cursor(){
-    "use strict";
-	
-	var myCursor	= jQuery('.mouse-cursor');
-	
-	if(myCursor.length){
-		if ($("body")) {
-        const e = document.querySelector(".cursor-inner"),
-            t = document.querySelector(".cursor-outer");
-        let n, i = 0,
-            o = !1;
-        window.onmousemove = function (s) {
-            o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)", n = s.clientY, i = s.clientX
-        }, $("body").on("mouseenter", "a, .ryker_tm_topbar .trigger, .cursor-pointer", function () {
-            e.classList.add("cursor-hover"), t.classList.add("cursor-hover")
-        }), $("body").on("mouseleave", "a, .ryker_tm_topbar .trigger, .cursor-pointer", function () {
-            $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
-        }), e.style.visibility = "visible", t.style.visibility = "visible"
-    }
-	}
-};
 
 // -----------------------------------------------------
 // ---------------    IMAGE TO SVG    ------------------
@@ -518,17 +459,19 @@ function ryker_tm_jarallax(){
 	});
 }
 
-
-$("#grouploop").grouploop({
-  velocity: 1,
-  forward: false,
-  childNode: ".item",
-  childWrapper: ".item-wrap",
-  pauseOnHover: false,
-  complete: function() {
-    console.log("init");
-  }
-});
+var grouploop = $("#grouploop");
+if (grouploop.length > 0) {
+	grouploop.grouploop({
+	velocity: 1,
+	forward: false,
+	childNode: ".item",
+	childWrapper: ".item-wrap",
+	pauseOnHover: false,
+	complete: function() {
+		console.log("init");
+	}
+	});
+}
 
 
 // -----------------------------------------------------
