@@ -3,9 +3,6 @@ jQuery(document).ready(function(){
 	"use strict";
 	
 	// here all ready functions
-	
-	ryker_tm_color_switcher();
-	ryker_tm_switcher_opener();
 	ryker_tm_nav_bg();
 	ryker_tm_trigger_menu();
 	ryker_tm_modalbox_news();
@@ -30,71 +27,6 @@ jQuery(document).ready(function(){
 // ------------------------------------------------
 // ---------------   FUNCTIONS    -----------------
 // ------------------------------------------------
-
-// -----------------------------------------------------
-// ---------------------   SWITCHERS    ----------------
-// -----------------------------------------------------
-
-function ryker_tm_color_switcher(){
-
-	"use strict";
-
-	var list	= jQuery('.ryker_tm_settings .colors li a');
-
-	list.on('click',function(){
-		var element = jQuery(this);
-		var elval	= element.attr('class');
-		element.closest('.ryker_tm_all_wrap').attr('data-color',''+elval+'');
-		return false;
-	});	
-}
-
-function ryker_tm_switcher_opener(){
-
-	"use strict";
-
-	var settings	= jQuery('.ryker_tm_settings');
-	var button		= settings.find('.link');
-	var direction	= settings.find('.direction li a');
-	var light		= settings.find('.direction li a.light');
-	var dark		= settings.find('.direction li a.dark');
-
-	button.on('click',function(){
-		var element = jQuery(this);
-		if(element.hasClass('opened')){
-			element.removeClass('opened');
-			element.closest('.ryker_tm_settings').removeClass('opened');
-		}else{
-			element.addClass('opened');
-			element.closest('.ryker_tm_settings').addClass('opened');
-		}
-		return false;
-	});
-
-	direction.on('click',function(){
-		var element = jQuery(this);
-		if(!element.hasClass('active')){
-			direction.removeClass('active');
-			element.addClass('active');
-		}
-	});
-
-	dark.on('click',function(){
-		var el = jQuery(this);
-		jQuery('body').addClass('dark');
-		jQuery('.ryker_tm_partners').addClass('opened');
-		el.closest('.ryker_tm_settings').addClass('changed');
-		return false;
-	});
-
-	light.on('click',function(){
-		var ele = jQuery(this);
-		jQuery('body').removeClass('dark');
-		jQuery('.ryker_tm_partners').removeClass('opened');
-		ele.closest('.ryker_tm_settings').removeClass('changed');
-		return false;
-	});
-}
 
 // ------------------------------------------------
 // -------------------  ANCHOR --------------------
