@@ -2452,7 +2452,7 @@ body.dark .ryker_tm_settings .cursor li .svg,
 
 @media (max-width: 1600px) {
 	.container{max-width: 1070px;}
-	.ryker_tm_hero .job h3{font-size: 55px;line-height: 1.2;}
+	.ryker_tm_hero .job h3{font-size: 55px;line-height: 1.4;}
 	.ryker_tm_hero .job{margin-bottom: 22px;}
 	.ryker_tm_hero .avatar{min-width: 350px;min-height: 350px;}
 	.ryker_tm_title h3{font-size: 23px;}
