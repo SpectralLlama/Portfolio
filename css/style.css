@@ -2512,7 +2512,7 @@ body.dark .ryker_tm_settings .cursor li .svg,
 @media (max-width: 768px) {
 	.ryker_tm_hero .job h3{font-size: 35px;}
 	.ryker_tm_hero .desc p{font-size: 16px;}
-	.short_skills{flex-direction: column;width: auto;left: 50%;transform: translateX(-50%);}
+	.short_skills{flex-direction: column;width: 100%;left: 50%;transform: translateX(-50%);}
 	.short_skills .text:before{display: none;}
 	.short_skills .icons{margin-left: 0px;}
 	.short_skills .text{margin-bottom: 20px;}
