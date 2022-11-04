@@ -197,7 +197,13 @@ function ryker_tm_modalbox_news(){
 	
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var list 		= jQuery('.ryker_tm_news ul li');
-	var closePopup	= modalBox.find('.close button');
+	var closeButton	= modalBox.find('.close button');
+
+	var closePopup = function() {
+		modalBox.removeClass('opened');
+		modalBox.find('.description_wrap').html('');
+		return false;
+	}
 	
 	list.each(function(){
 		var element 	= jQuery(this);
@@ -218,11 +224,15 @@ function ryker_tm_modalbox_news(){
 			return false;
 		});
 	});
-	closePopup.on('click',function(){
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		return false;
+
+	modalBox.on('click', function(evt){
+		if ($(evt.target).is(modalBox)) {
+			evt.preventDefault();
+			closePopup();
+		}
 	});
+
+	closeButton.on('click', closePopup);
 }
 
 // -------------------------------------------------
@@ -230,9 +240,9 @@ function ryker_tm_modalbox_news(){
 // -------------------------------------------------
 
 function ryker_tm_modalbox_portfolio(){
-	
 	"use strict";
 	
+	var portfolioModalOpened = false;
 	var modalBox	= jQuery('.ryker_tm_modalbox');
 	var button		= jQuery('.ryker_tm_portfolio .popup_info');
 	
@@ -247,8 +257,18 @@ function ryker_tm_modalbox_portfolio(){
 		modalBox.find('.description_wrap').html(details);
 		modalBox.find('.top_image').html(image);
 		modalBox.find('.portfolio_main_title').html(titles);
+		portfolioModalOpened = true;
 		
 		return false;
+	});
+
+	document.addEventListener("keyup", function(evt) {
+		if (evt.code == "Escape" && portfolioModalOpened && modalBox) {
+			evt.preventDefault();
+			modalBox.removeClass("opened");
+			modalBox.find('.description_wrap').html('');
+			portfolioModalOpened = false;
+		}
 	});
 }
 
