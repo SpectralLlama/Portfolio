@@ -1,10 +1,6 @@
 @charset "utf-8";
 
 /*
-/*	Copyright (c) 2021 Marketify
-/*	Author: Marketify
-/*	This file is made for CURRENT TEMPLATE
-
 01)	RYKER BASE
 02) RYKER TOPBAR
 03) RYKER MOBILE MENU
@@ -19,7 +15,6 @@
 12) RYKER COPYRIGHT
 13) RYKER MAGIC CURSOR
 14) RYKER MEDIA QUERIES (FOR SMALL DEVIVES)
-
 
 /*---------------------------------------------------*/
 /*	01) RYKER BASE
@@ -1112,6 +1107,7 @@ h6 { font-size: 16px; }
 }
 .ryker_tm_modalbox .main_details .textbox p{
 	margin-bottom: 18px;
+	font-size: 18px;
 }
 .ryker_tm_modalbox .main_details .textbox p:last-child{
 	margin-bottom: 0px;
@@ -1119,9 +1115,11 @@ h6 { font-size: 16px; }
 .ryker_tm_modalbox .main_details .textbox2{
 	width: 100%;
 	padding-right: 40px;
+	font-size: 18px;
 }
 .ryker_tm_modalbox .main_details .textbox2 p{
 	margin-bottom: 18px;
+	font-size: 18px;
 }
 .ryker_tm_modalbox .main_details .textbox2 p:last-child{
 	margin-bottom: 0px;
@@ -1138,6 +1136,7 @@ h6 { font-size: 16px; }
 	margin: 0px 0px 8px 0px;
 	width: 100%;
 	float: left;
+	font-size: 18px;
 }
 .ryker_tm_modalbox .main_details .detailbox > ul > li:last-child{
 	margin-bottom: 0px;
