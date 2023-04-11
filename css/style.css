@@ -2442,6 +2442,10 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_title{max-width: 450px;}
 	.ryker_tm_news ul li .details span{margin-bottom: 5px;}
 }
+@media (min-width: 1201px) {
+	.ryker_tm_modalbox .main_details {justify-content: center;}
+	.ryker_tm_modalbox .main_details .textbox2 {width: 85%;}
+}
 @media (max-width: 1200px) {
 	.ryker_tm_modalbox .close{margin-left: 10px;}
 	.ryker_tm_modalbox .main_details{flex-direction: column;}
