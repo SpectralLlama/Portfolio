@@ -110,7 +110,7 @@ h1 { font-size: 45px; }
 h2 { font-size: 36px; }
 h3 { font-size: 30px; }
 h4 { font-size: 24px; }
-h5 { font-size: 20px; }
+h5 { font-size: 45px; margin-top: 10px; }
 h6 { font-size: 16px; }
 
 .ryker_tm_all_wrap{
@@ -2445,6 +2445,7 @@ body.dark .ryker_tm_settings .cursor li .svg,
 @media (min-width: 1201px) {
 	.ryker_tm_modalbox .main_details {justify-content: center;}
 	.ryker_tm_modalbox .main_details .textbox2 {width: 85%;}
+	h5 {margin-left:-6%;}
 }
 @media (max-width: 1200px) {
 	.ryker_tm_modalbox .close{margin-left: 10px;}
