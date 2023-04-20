@@ -877,6 +877,29 @@ h6 { font-size: 16px; }
 	float: left;
 	padding-left: 50px;
 }
+.portfolio-partner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding-top: 97px;
+}
+.portfolio-partner ul{
+	margin: 0px 0px 0px -50px;
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: center;
+}
+.small_width{
+	width: 25%;
+	float: left;
+}
+.empty_space {
+	width:12.5%;
+	float:left;
+}
 .ryker_tm_portfolio .portfolio_list ul li .list_inner{
 	width: 100%;
 	height: auto;
@@ -2519,4 +2542,5 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_modalbox .close{margin-left: -20px;top: -35px;}
 	.ryker_tm_modalbox .close .svg{width: 20px;height: 20px;}
 	.ryker_tm_modalbox .description_wrap{padding: 20px;}
+	.small_width{width: 31%;}
 }
