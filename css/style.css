@@ -2515,6 +2515,8 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_copyright .text{margin-bottom: 5px;}
 }
 @media (max-width: 768px) {
+	.portfolio-partner ul {margin: 0px 0px 0px -25px;}
+	.ryker_tm_modalbox .main_details .textbox2 {padding-right: 0px;}
 	.ryker_tm_hero .job h3{font-size: 35px;}
 	.ryker_tm_hero .desc p{font-size: 16px;}
 	.short_skills{flex-direction: column;width: 100%;left: 50%;transform: translateX(-50%);}
