@@ -885,7 +885,6 @@ h6 { font-size: 16px; }
 	padding-top: 97px;
 }
 .portfolio-partner ul{
-	margin: 0px 0px 0px -50px;
 	list-style-type: none;
 	display: flex;
 	flex-direction: row;
@@ -2515,7 +2514,6 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_copyright .text{margin-bottom: 5px;}
 }
 @media (max-width: 768px) {
-	.portfolio-partner ul {margin: 0px 0px 0px -25px;}
 	.ryker_tm_modalbox .main_details .textbox2 {padding-right: 0px;}
 	.ryker_tm_hero .job h3{font-size: 35px;}
 	.ryker_tm_hero .desc p{font-size: 16px;}
@@ -2545,4 +2543,8 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_modalbox .close .svg{width: 20px;height: 20px;}
 	.ryker_tm_modalbox .description_wrap{padding: 20px;}
 	.small_width{width: 31%;}
+}
+@media (max-width: 568px) {
+	.ryker_tm_hero .desc{margin-bottom:60px;}
+	.short_skills{bottom:4%;}
 }
