@@ -400,7 +400,7 @@ h6 { font-size: 16px; }
 	list-style-type: none;
 }
 .ryker_tm_mobile_menu .dropdown .dropdown_inner ul li{
-	margin: 0px;
+	margin: 25px;
 	float: left;
 	width: 100%;
 }
