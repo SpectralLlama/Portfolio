@@ -2545,10 +2545,14 @@ body.dark .ryker_tm_settings .cursor li .svg,
 	.ryker_tm_modalbox .close .svg{width: 20px;height: 20px;}
 	.ryker_tm_modalbox .description_wrap{padding: 20px;}
 	.small_width{width: 31%;}
+}
+@media (max-width: 850px) {
 	.mobile-only {display:block;}
 	.desktop-only {display:none;}
 }
-@media (min-width: 769px) {.mobile-only{display:none;}}
+@media (min-width: 851px) {
+	.mobile-only{display:none;}
+}
 @media (max-width: 568px) {
 	.ryker_tm_hero .desc{margin-bottom:60px;}
 	.short_skills{bottom:4%;}
